@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 public class JedisTest {
 	private static JedisPool pool;
-	private static final String host = "";
+	private static final String host = "192.168.2.10";
 	public static void main(String[] args) {
 		pool = new JedisPool(new JedisPoolConfig(), host);
 		try (Jedis jedis = pool.getResource()) {
