@@ -7,6 +7,9 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+/**
+ * CyclicBarrier的使用
+ */
 public class BankWaterService implements Runnable {
 	private int count = 5;
 	private CyclicBarrier c = new CyclicBarrier(count, this);

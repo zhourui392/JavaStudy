@@ -3,7 +3,9 @@ package concurrent.utilclass;
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+/**
+ * 线程之间进行通讯
+ */
 public class ExchangerTest {
 	private static final Exchanger<String> exgr = new Exchanger<String>();
 	
