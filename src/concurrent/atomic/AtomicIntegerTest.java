@@ -1,7 +1,6 @@
 package concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicIntegerArray;
 
 /**
  * 原子操作
@@ -27,6 +26,7 @@ public class AtomicIntegerTest {
 				}
 			}).start();
 		}
+
 		Thread.sleep(1000);
 		System.out.println("last result:"+atomicInt.get());
 	}
