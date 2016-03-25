@@ -1,22 +1,29 @@
 package lambda;
 
-/**
- * Created by ruizhou on 15/10/24.
- */
 public class Person {
-    private String firstName;
-    private String lastName;
+	private String firstName;
+	private String name;
+	
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Person(String name, String firstname) {
+		this.name = name;
+		this.firstName = firstname;
+	}
+
 }
