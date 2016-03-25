@@ -1,2 +1,6 @@
 /target/
 /bin/
+/.settings
+.project
+.classpath
+NettyStudy.iml
