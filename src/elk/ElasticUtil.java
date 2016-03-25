@@ -1,16 +1,16 @@
 package elk;
 
+import java.util.Map;
+
 import util.HttpUtil;
 
 public class ElasticUtil {
-	public static final String HOST = "http://103.21.116.220:9200/";
+	public static final String HOST = "http://119.254.209.219:9200/";
 	/**
 	 * index create
 	 */
-	public static String createIndex(){
-		
-		String aa = HttpUtil.get(HOST);
-		return aa;
+	public static String createIndex(String indexName,Map<String, String> params){
+		return HttpUtil.put(HOST+"/"+indexName, params);
 	}
 	
 	/**
@@ -32,8 +32,7 @@ public class ElasticUtil {
 	/**
 	 * index delete
 	 */
-	public static String deleteIndex(){
-		
-		return null;
+	public static String deleteIndex(String indexName) {
+		return HttpUtil.delete(HOST+"/"+indexName);
 	}
 }

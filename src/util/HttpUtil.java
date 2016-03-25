@@ -23,11 +23,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HttpUtil {
-	private static final Log logger = Logs.get();
+	private static final Logger logger = LoggerFactory.getLogger(HttpUtil.class);
 	public static String get(String url){
 		HttpGet get = new HttpGet(url);
 		//设置5秒的超时
@@ -48,15 +48,15 @@ public class HttpUtil {
 				return EntityUtils.toString(httpEntity);
 			}
 		} catch( HttpHostConnectException hostException){
-			logger.errorf("Connection error: connect to {}, exception:{}",url,hostException);
+			logger.error("Connection error: connect to {}, exception:{}",url,hostException);
 		} catch (NoRouteToHostException noroutE) {
-			logger.errorf("No route to host: connect{}, exception:{}",url,noroutE);
+			logger.error("No route to host: connect{}, exception:{}",url,noroutE);
 		} catch (IllegalStateException e) {
-			logger.errorf("IllegalStateException: connect{}, exception:{}",url,e);
+			logger.error("IllegalStateException: connect{}, exception:{}",url,e);
 		} catch (ParseException e) {
-			logger.errorf("ParseException: connect{}, exception:{}",url,e);
+			logger.error("ParseException: connect{}, exception:{}",url,e);
 		} catch (IOException e) {
-			logger.errorf("IOException: connect{}, exception:{}",url,e);
+			logger.error("IOException: connect{}, exception:{}",url,e);
 		}
 		return null;
 	}
@@ -85,9 +85,9 @@ public class HttpUtil {
 				return EntityUtils.toString(httpEntity);
 			}
 		} catch (IllegalStateException e) {
-			logger.errorf("post {} and throw IllegalStateException:{}",url,e);
+			logger.error("post {} and throw IllegalStateException:{}",url,e);
 		} catch (IOException e) {
-			logger.errorf("post {} and throw IOException:{}",url,e);
+			logger.error("post {} and throw IOException:{}",url,e);
 		}
 		return null;
 	}
