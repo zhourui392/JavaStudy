@@ -14,7 +14,7 @@ public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 	private static Log log = Logs.get();
 
 	/**
-	 * 从服务器端读消息
+	 * 从服务器端读消息h
 	 */
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)

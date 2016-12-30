@@ -10,9 +10,10 @@ import redis.clients.jedis.JedisPoolConfig;
 
 public class JedisTest {
 	private static JedisPool pool;
-	private static final String host = "192.168.2.10";
+	private static final String host = "192.168.1.216";
+	private static final int port = 6379;
 	public static void main(String[] args) {
-		pool = new JedisPool(new JedisPoolConfig(), host);
+		pool = new JedisPool(new JedisPoolConfig(), host,port);
 		try (Jedis jedis = pool.getResource()) {
 			  /// ... do stuff here ... for example
 			  jedis.set("foo", "bar");

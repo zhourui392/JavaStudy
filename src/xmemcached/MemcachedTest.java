@@ -57,7 +57,7 @@ public class MemcachedTest {
 	    client.incr("a",4);
 	    client.decr("a",4);
 
-	    //cas
+		// cas
 	    client.cas("a", 0, new CASOperation() {
 	                    @Override
 	                    public int getMaxTries() {
