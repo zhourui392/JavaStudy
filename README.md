@@ -1,2 +1,2 @@
-# NettyStudy
-as the name
+# JavaStudy
+different kinds of Java Frame
