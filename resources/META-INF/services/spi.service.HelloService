@@ -1,0 +1,2 @@
+spi.service.impl.DefaultHelloService
+spi.service.impl.CustomHelloService
